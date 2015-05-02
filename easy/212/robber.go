@@ -7,7 +7,7 @@ import (
     "strings"
 )
 
-const Consonants = "BCDGFHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz"
+const Consonants = "BCDGFHJKLMNPQRSTVWXZbcdfghjklmnpqrstvwxz"
 
 func encode(inputString string) string {
     var encodedString []rune
