@@ -2,24 +2,22 @@ package main
 
 import (
     "fmt"
-    "unicode"
     "os"
+    "unicode"
     "strings"
 )
 
-const Consonants = "bcdfghjklmnpqrstvwxyz"
+const Consonants = "BCDGFHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz"
 
 func encode(decodedString string) string {
     var encodedString []rune
 
     for _, letter := range decodedString {
-        letter = unicode.ToLower(letter)
-
         encodedString = append(encodedString, letter)
 
         if strings.ContainsRune(Consonants, letter) {
             encodedString = append(encodedString, 'o')
-            encodedString = append(encodedString, letter)
+            encodedString = append(encodedString, unicode.ToLower(letter))
         }
     }
 
