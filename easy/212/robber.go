@@ -9,10 +9,10 @@ import (
 
 const Consonants = "BCDGFHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz"
 
-func encode(decodedString string) string {
+func encode(inputString string) string {
     var encodedString []rune
 
-    for _, letter := range decodedString {
+    for _, letter := range inputString {
         encodedString = append(encodedString, letter)
 
         if strings.ContainsRune(Consonants, letter) {
