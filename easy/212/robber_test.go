@@ -17,3 +17,19 @@ func TestEncode(t *testing.T) {
 		}
 	}
 }
+
+func TestDecode(t *testing.T) {
+	testCases := []struct {
+		inputString, expectedString string
+	} {
+        {"Jojagog totalolaror Rorövovarorsospoproråkoketot!", "Jag talar Rövarspråket!"},
+        {"I'mom sospopeakokinongog Rorobobboberor'sos lolanongoguagoge!", "I'm speaking Robber's language!"},
+		{"", ""},
+	}
+	for _, testCase := range testCases {
+		result := decode(testCase.inputString)
+		if result != testCase.expectedString {
+			t.Errorf("encode(%q) == %q, want %q", testCase.inputString, result, testCase.expectedString)
+		}
+	}
+}
