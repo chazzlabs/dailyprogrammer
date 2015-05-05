@@ -6,31 +6,27 @@ import (
     "os"
 )
 
-type Order struct {
-    High, Low string
-}
-
-var dictionary map[rune]Order
+var dictionary map[rune][]string
 
 func createDictionary() {
-    dictionary = make(map[rune]Order)
+    dictionary = make(map[rune][]string)
 
-    dictionary['0'] = Order{"", ""}
-    dictionary['1'] = Order{"eleventy", "-one"}
-    dictionary['2'] = Order{"twenty", "-two"}
-    dictionary['3'] = Order{"thirty", "-three"}
-    dictionary['4'] = Order{"fourty", "-four"}
-    dictionary['5'] = Order{"fifty", "-five"}
-    dictionary['6'] = Order{"sixty", "-six"}
-    dictionary['7'] = Order{"seventy", "-seven"}
-    dictionary['8'] = Order{"eighty", "-eight"}
-    dictionary['9'] = Order{"ninety", "-nine"}
-    dictionary['A'] = Order{"atta", "-a"}
-    dictionary['B'] = Order{"bibbity", "-bee"}
-    dictionary['C'] = Order{"city", "-cee"}
-    dictionary['D'] = Order{"dickety", "-dee"}
-    dictionary['E'] = Order{"ebbity", "-ee"}
-    dictionary['F'] = Order{"fleventy", "-eff"}
+    dictionary['0'] = []string{"", ""}
+    dictionary['1'] = []string{"eleventy", "-one"}
+    dictionary['2'] = []string{"twenty", "-two"}
+    dictionary['3'] = []string{"thirty", "-three"}
+    dictionary['4'] = []string{"fourty", "-four"}
+    dictionary['5'] = []string{"fifty", "-five"}
+    dictionary['6'] = []string{"sixty", "-six"}
+    dictionary['7'] = []string{"seventy", "-seven"}
+    dictionary['8'] = []string{"eighty", "-eight"}
+    dictionary['9'] = []string{"ninety", "-nine"}
+    dictionary['A'] = []string{"atta", "-a"}
+    dictionary['B'] = []string{"bibbity", "-bee"}
+    dictionary['C'] = []string{"city", "-cee"}
+    dictionary['D'] = []string{"dickety", "-dee"}
+    dictionary['E'] = []string{"ebbity", "-ee"}
+    dictionary['F'] = []string{"fleventy", "-eff"}
 }
 
 func pronounce(hexValue string) string {
@@ -39,16 +35,11 @@ func pronounce(hexValue string) string {
     hexValue = hexValue[2:]
 
     for index, letter := range hexValue {
-        switch index {
-        case 0:
-            result.WriteString(dictionary[letter].High)
-        case 1:
-            result.WriteString(dictionary[letter].Low)
-        case 2:
-            result.WriteString(" bitey " + dictionary[letter].High)
-        case 3:
-            result.WriteString(dictionary[letter].Low)
+        if index == 2 {
+            result.WriteString(" bitey ")
         }
+
+        result.WriteString(dictionary[letter][index % 2])
     }
 
     return result.String()
