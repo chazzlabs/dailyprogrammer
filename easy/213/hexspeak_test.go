@@ -4,7 +4,7 @@ import "testing"
 
 func TestPronounce(t *testing.T) {
     createDictionary()
-    
+
 	testCases := []struct {
 		inputString, expectedString string
 	} {
