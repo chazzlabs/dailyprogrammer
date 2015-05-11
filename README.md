@@ -13,3 +13,4 @@ I decided to start using dailyprogrammer as an exercise in learning new language
 |-----------|------------|-------------|----------|
 | 212 | Easy | [Link](http://www.reddit.com/r/dailyprogrammer/comments/341c03/20150427_challenge_212_easy_r%C3%B6varspr%C3%A5ket)| [Link](https://github.com/chazzlabs/dailyprogrammer/tree/master/easy/212)|
 | 213 | Easy | [Link](http://www.reddit.com/r/dailyprogrammer/comments/34rxkc/20150504_challenge_213_easy_pronouncing_hex/)| [Link](https://github.com/chazzlabs/dailyprogrammer/tree/master/easy/213)|
+| 214 | Easy | [Link](http://www.reddit.com/r/dailyprogrammer/comments/35l5eo/20150511_challenge_214_easy_calculating_the/)| [Link](https://github.com/chazzlabs/dailyprogrammer/tree/master/easy/214)|
