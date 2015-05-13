@@ -5,6 +5,7 @@ import (
     "math"
     "os"
     "strconv"
+    "log"
 )
 
 func calculateMean(values []float64) float64 {
@@ -61,9 +62,8 @@ func convertToFloatArray(stringValues []string) []float64 {
     for _, stringValue := range stringValues {
         floatValue, err := strconv.ParseFloat(stringValue, 64)
 
-        // TODO: Research and implement error handling
         if err != nil {
-            break
+            log.Fatal(err)
         }
 
         floatValues = append(floatValues, floatValue)
