@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -e -x
+
+pushd dailyprogrammer/easy/212
+    go get
+    go test
+popd
+
+pushd dailyprogrammer/easy/213
+    go get
+    go test
+popd
+
+pushd dailyprogrammer/easy/214
+    go get
+    go test
+popd

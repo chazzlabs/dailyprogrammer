@@ -1,0 +1,22 @@
+groups:
+- name: tests
+  jobs:
+  - go-test
+- name: golang
+  jobs:
+  - go-test
+
+resources:
+- name: dailyprogrammer
+  type: git
+  source:
+    uri: https://github.com/chazzlabs/dailyprogrammer
+    branch: master
+
+jobs:
+- name: go-test
+  plan:
+  - get: dailyprogrammer
+    trigger: true
+  - task: unit
+    file: dailyprogrammer/ci/test.yml
